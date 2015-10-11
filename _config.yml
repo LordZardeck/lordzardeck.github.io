@@ -1,6 +1,6 @@
 # Site wide configuration
 
-title:            Site Title
+title:            "Sean Templeton: Web Developer"
 locale:           en_US
 url:
 
@@ -26,23 +26,23 @@ kramdown:
 
 # Site owner
 owner:
-  name: Your Name
+  name: Sean Templeton
   avatar: bio-photo.jpg
-  bio: "Describe your self."
-  email:
+  bio: "I am a Web Developer and technology enthusiast who has been developing web applications since I was 15 years old."
+  email: "sean@templeton.io"
   disqus-shortname:
-  twitter: #username
+  twitter: lordzardeck
   facebook: #username
   google:
-    plus: #username
+    plus: "SeanTempletonJS"
     analytics:
     verify:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
-  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: #username
+  github: lordzardeck
+  stackoverflow: 633513/lordzardeck
+  linkedin: lordzardeck
   xing: #username
   instagram: #username
   lastfm: #username
