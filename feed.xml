@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">Sean Templeton Web Developer</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2015-10-10T23:54:59-06:00</updated>
+<id>/</id>
+<author>
+  <name>Your Name</name>
+  <uri>/</uri>
+  
+</author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[LESS vs SASS - Why to Use Them and Which to Use]]></title>
+  <link rel="alternate" type="text/html" href="/less-vs-sass-scss-why-which/" />
+  <id>/less-vs-sass-scss-why-which</id>
+  <published>2013-12-21T00:00:00-07:00</published>
+  <updated>2013-12-21T00:00:00-07:00</updated>
+  <author>
+    <name>Your Name</name>
+    <uri></uri>
+    
+  </author>
+  <content type="html">
+    &lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Overview&lt;/h3&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#less-and-sass-overview&quot; id=&quot;markdown-toc-less-and-sass-overview&quot;&gt;LESS and SASS Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#primary-features&quot; id=&quot;markdown-toc-primary-features&quot;&gt;Primary Features&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#nesting-inheritance&quot; id=&quot;markdown-toc-nesting-inheritance&quot;&gt;Nesting (Inheritance)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#variables&quot; id=&quot;markdown-toc-variables&quot;&gt;Variables&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#mixins&quot; id=&quot;markdown-toc-mixins&quot;&gt;Mixins&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#differences&quot; id=&quot;markdown-toc-differences&quot;&gt;Differences&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#which-to-use&quot; id=&quot;markdown-toc-which-to-use&quot;&gt;Which to Use?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+&lt;h2 id=&quot;less-and-sass-overview&quot;&gt;LESS and SASS Overview&lt;/h2&gt;
+
+&lt;p&gt;LESS and SASS (or SCSS) are High-level dynamic stylesheet languages created to help create cleaner and more modular stylesheets. SCSS is the predecessor to SASS, providing native CSS support. This means, like LESS, SCSS is a superset of CSS, allowing CSS to be “dropped in” and still be valid at compile time. With this functionality, development integration to pre-existing styles becomes quick and painless.&lt;/p&gt;
+
+&lt;h1 id=&quot;primary-features&quot;&gt;Primary Features&lt;/h1&gt;
+
+&lt;p&gt;Some of the main features that LESS and SASS provide are: variables, nesting (or inheritance), &amp;amp; mixins. These solve a variety of problems that plain CSS creates. In addition, these two languages allow “normal” css to be used withing their language. This means that porting is easy as even if you only modify a few lines, the whole stylesheet is still valid.&lt;/p&gt;
+
+&lt;h2 id=&quot;nesting-inheritance&quot;&gt;Nesting (Inheritance)&lt;/h2&gt;
+
+&lt;p&gt;For example, say you wanted to set the property of a child element of a parent element. You would have to define in a single line both the parent element and the child element. If you then wanted to set the property of another child element, you would again have to copy the parent’s identity in addition to the child’s.&lt;/p&gt;
+
+&lt;p&gt;For small CSS projects this may seem acceptable, and in reality it is. What happens, though, for large websites and applications? You have a very large CSS code base with duplicated styles. This easily becomes hard to manage, modify, and extend. In addition, imagine you decide you need to namespace it to allow external CSS stylesheets to work with your current styles. You would have to go through each and every line to add your namespacing scope. If any classes change, again you would have to go through very many lines to change them.&lt;/p&gt;
+
+&lt;p&gt;How does this work exactly? Look at the before and example below. You can easily see how, in addition to increasing maintainability, the code is much easier to read and understand.&lt;/p&gt;
+
+&lt;div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;CSS:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;c&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt; *  Project is namespaced as &amp;quot;my-project&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt; */&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.my-project.my-project-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1000px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.my-project.my-project-container&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.my-project.my-project-container&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.my-project.my-project-container&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.my-project.my-project-container&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.my-project.my-project-container&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h5&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ff0000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;LESS:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; *  Project is namespaced as &amp;quot;my-project&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.my-project&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.my-project-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h5&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#ff0000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can clearly see, by nesting you can easily create a hierarchy of style rules that becomes easy to modify and extend.&lt;/p&gt;
+
+&lt;h2 id=&quot;variables&quot;&gt;Variables&lt;/h2&gt;
+
+&lt;p&gt;Variables are another great feature that both LESS and SASS provide. Simply stated, you can define any CSS property value in a variable and re-use that value across all stylesheets. This makes making changes to things such as colors across an entire site as simple as editing the one variable.&lt;/p&gt;
+
+&lt;h2 id=&quot;mixins&quot;&gt;Mixins&lt;/h2&gt;
+
+&lt;p&gt;The final of the 3 major features that both LESS and SASS provide are mixins. Mixins allow you to re-use classes within other CSS rules. Mixins also allow for variables to be passed in  to modify the way that mixin outputs CSS, similar to a function. Below are examples from their respective websites of mixins in both LESS and SASS.&lt;/p&gt;
+
+&lt;div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;LESS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;na&quot;&gt;.rounded-corners(@radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+    &lt;span class=&quot;na&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;na&quot;&gt;-webkit-border-radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;na&quot;&gt;-moz-border-radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+&lt;span class=&quot;nn&quot;&gt;#header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+    &lt;span class=&quot;nc&quot;&gt;.rounded-corners&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+&lt;span class=&quot;nn&quot;&gt;#footer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+    &lt;span class=&quot;nc&quot;&gt;.rounded-corners&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;SASS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@mixin&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt; border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+    &lt;span class=&quot;na&quot;&gt;-webkit-border-radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;na&quot;&gt;-moz-border-radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;na&quot;&gt;-ms-border-radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;na&quot;&gt;-o-border-radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+    &lt;span class=&quot;na&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;  
+    &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;differences&quot;&gt;Differences&lt;/h1&gt;
+
+&lt;p&gt;LESS and SASS are very powerful languages and are very similar in feature sets. In fact, at this time as far as I can tell, neither has a major benefit over the other. LESS does provide client side compilation, but that feature is limited and not as useful. So what are the differences? Syntax.&lt;/p&gt;
+
+&lt;p&gt;LESS is true to it’s name when it comes to its syntax. LESS looks almost identical to CSS, therefore the learning curve is very low. With few keywords and the logic language being the familiar JavaScript, it is excellent for quick integration without any history with CSS superset languages. Variables are defined with the “@” symbol, and mixins are just classes with arguments.&lt;/p&gt;
+
+&lt;p&gt;SASS on the other hand has a very defined language structure. They have more than a few reserved words and have a specific way of utilizing functions and mixins. They also have their own logic framework, meaning they have their own language spec on how to do loops and conditional statements.&lt;/p&gt;
+
+&lt;h1 id=&quot;which-to-use&quot;&gt;Which to Use?&lt;/h1&gt;
+
+&lt;p&gt;In terms of features and power, it’s a definitive tie. You might go with LESS if you would like to test using the client-side loading feature of the LESS instead of compiling each time you modify the stylesheets.&lt;/p&gt;
+
+&lt;p&gt;The only reason to choose one over the other is really a matter of preference. Each language has very different language syntax. LESS leans toward being more easy to catch on, even for designers. Unless you have a team already familiar with SASS, my recommendation would be to check out LESS.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/less-vs-sass-scss-why-which/&quot;&gt;LESS vs SASS - Why to Use Them and Which to Use&lt;/a&gt; was originally published by Your Name at &lt;a href=&quot;&quot;&gt;Sean Templeton Web Developer&lt;/a&gt; on December 21, 2013.&lt;/p&gt;
+  </content>
+</entry>
+
+</feed>

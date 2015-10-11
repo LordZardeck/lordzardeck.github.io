@@ -1,0 +1,335 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>LESS vs SASS - Why to Use Them and Which to Use &#8211; Sean Templeton Web Developer</title>
+<meta name="description" content="LESS vs SASS: Why we should use them, and which one should you use?">
+<meta name="keywords" content="LESS vs SASS">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="LESS vs SASS - Why to Use Them and Which to Use">
+<meta name="twitter:description" content="LESS vs SASS: Why we should use them, and which one should you use?">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="/images/sass-less.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LESS vs SASS - Why to Use Them and Which to Use">
+<meta property="og:description" content="LESS vs SASS: Why we should use them, and which one should you use?">
+<meta property="og:url" content="/less-vs-sass-scss-why-which/">
+<meta property="og:site_name" content="Sean Templeton Web Developer">
+
+<meta property="og:image" content="/images/sass-less.png">
+
+
+
+
+
+
+<link rel="canonical" href="/less-vs-sass-scss-why-which/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Sean Templeton Web Developer Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">Sean Templeton Web Developer</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="/posts/" >Blog</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+  <div class="image-wrap">
+  <img src=
+    
+      "/images/sass-less.png"
+    
+  alt="LESS vs SASS - Why to Use Them and Which to Use feature image">
+  
+    <span class="image-credit">Photo Credit: <a href="http://getbootstrap.com/">Bootstrap</a></span>
+  
+  </div><!-- /.image-wrap -->
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="/images/bio-photo.jpg" class="bio-photo" alt="Your Name bio photo">
+
+
+  <h3 itemprop="name">Your Name</h3>
+  <p>Describe your self.</p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="/less-vs-sass-scss-why-which/" rel="bookmark" title="LESS vs SASS - Why to Use Them and Which to Use">LESS vs SASS - Why to Use Them and Which to Use</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Overview</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#less-and-sass-overview" id="markdown-toc-less-and-sass-overview">LESS and SASS Overview</a></li>
+  <li><a href="#primary-features" id="markdown-toc-primary-features">Primary Features</a>    <ul>
+      <li><a href="#nesting-inheritance" id="markdown-toc-nesting-inheritance">Nesting (Inheritance)</a></li>
+      <li><a href="#variables" id="markdown-toc-variables">Variables</a></li>
+      <li><a href="#mixins" id="markdown-toc-mixins">Mixins</a></li>
+    </ul>
+  </li>
+  <li><a href="#differences" id="markdown-toc-differences">Differences</a></li>
+  <li><a href="#which-to-use" id="markdown-toc-which-to-use">Which to Use?</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<h2 id="less-and-sass-overview">LESS and SASS Overview</h2>
+
+<p>LESS and SASS (or SCSS) are High-level dynamic stylesheet languages created to help create cleaner and more modular stylesheets. SCSS is the predecessor to SASS, providing native CSS support. This means, like LESS, SCSS is a superset of CSS, allowing CSS to be “dropped in” and still be valid at compile time. With this functionality, development integration to pre-existing styles becomes quick and painless.</p>
+
+<h1 id="primary-features">Primary Features</h1>
+
+<p>Some of the main features that LESS and SASS provide are: variables, nesting (or inheritance), &amp; mixins. These solve a variety of problems that plain CSS creates. In addition, these two languages allow “normal” css to be used withing their language. This means that porting is easy as even if you only modify a few lines, the whole stylesheet is still valid.</p>
+
+<h2 id="nesting-inheritance">Nesting (Inheritance)</h2>
+
+<p>For example, say you wanted to set the property of a child element of a parent element. You would have to define in a single line both the parent element and the child element. If you then wanted to set the property of another child element, you would again have to copy the parent’s identity in addition to the child’s.</p>
+
+<p>For small CSS projects this may seem acceptable, and in reality it is. What happens, though, for large websites and applications? You have a very large CSS code base with duplicated styles. This easily becomes hard to manage, modify, and extend. In addition, imagine you decide you need to namespace it to allow external CSS stylesheets to work with your current styles. You would have to go through each and every line to add your namespacing scope. If any classes change, again you would have to go through very many lines to change them.</p>
+
+<p>How does this work exactly? Look at the before and example below. You can easily see how, in addition to increasing maintainability, the code is much easier to read and understand.</p>
+
+<div></div>
+
+<p><strong>CSS:</strong></p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/**</span>
+<span class="c"> *  Project is namespaced as &quot;my-project&quot;</span>
+<span class="c"> */</span>
+
+<span class="nc">.my-project.my-project-container</span> <span class="p">{</span> 
+    <span class="k">width</span><span class="o">:</span> <span class="m">1000px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.my-project.my-project-container</span> <span class="nt">h1</span><span class="o">,</span>
+<span class="nc">.my-project.my-project-container</span> <span class="nt">h2</span><span class="o">,</span>
+<span class="nc">.my-project.my-project-container</span> <span class="nt">h3</span><span class="o">,</span>
+<span class="nc">.my-project.my-project-container</span> <span class="nt">h4</span><span class="o">,</span>
+<span class="nc">.my-project.my-project-container</span> <span class="nt">h5</span> <span class="p">{</span>
+   <span class="k">margin</span><span class="o">:</span> <span class="m">20px</span> <span class="m">5px</span><span class="p">;</span>
+   <span class="k">color</span><span class="o">:</span> <span class="m">#ff0000</span><span class="p">;</span>
+   <span class="k">font-weight</span><span class="o">:</span> <span class="k">normal</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+<p><strong>LESS:</strong></p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="cm">/**</span>
+<span class="cm"> *  Project is namespaced as &quot;my-project&quot;</span>
+<span class="cm"> */</span>
+
+<span class="nc">.my-project</span> <span class="p">{</span> 
+    <span class="k">&amp;</span><span class="nc">.my-project-container</span> <span class="p">{</span>
+        <span class="na">width</span><span class="o">:</span> <span class="mi">1000</span><span class="kt">px</span><span class="p">;</span>
+
+        <span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span><span class="o">,</span> <span class="nt">h4</span><span class="o">,</span> <span class="nt">h5</span> <span class="p">{</span>
+            <span class="na">margin</span><span class="o">:</span> <span class="mi">20</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+            <span class="na">color</span><span class="o">:</span> <span class="mh">#ff0000</span><span class="p">;</span>
+            <span class="na">font-weight</span><span class="o">:</span> <span class="no">normal</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>As you can clearly see, by nesting you can easily create a hierarchy of style rules that becomes easy to modify and extend.</p>
+
+<h2 id="variables">Variables</h2>
+
+<p>Variables are another great feature that both LESS and SASS provide. Simply stated, you can define any CSS property value in a variable and re-use that value across all stylesheets. This makes making changes to things such as colors across an entire site as simple as editing the one variable.</p>
+
+<h2 id="mixins">Mixins</h2>
+
+<p>The final of the 3 major features that both LESS and SASS provide are mixins. Mixins allow you to re-use classes within other CSS rules. Mixins also allow for variables to be passed in  to modify the way that mixin outputs CSS, similar to a function. Below are examples from their respective websites of mixins in both LESS and SASS.</p>
+
+<div></div>
+
+<p><strong>LESS</strong></p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="na">.rounded-corners(@radius</span><span class="o">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">)</span> <span class="p">{</span>  
+    <span class="na">border-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>  
+    <span class="na">-webkit-border-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>  
+    <span class="na">-moz-border-radius</span><span class="o">:</span> <span class="o">@</span><span class="n">radius</span><span class="p">;</span>  
+<span class="p">}</span>  
+<span class="nn">#header</span> <span class="p">{</span>  
+    <span class="nc">.rounded-corners</span><span class="o">;</span>  
+<span class="p">}</span>  
+<span class="nn">#footer</span> <span class="p">{</span>  
+    <span class="nc">.rounded-corners</span><span class="o">(</span><span class="nt">10px</span><span class="o">);</span>  
+<span class="p">}</span></code></pre></div>
+
+<p><strong>SASS</strong></p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span><span class="nf"> border-radius</span><span class="p">(</span><span class="nv">$radius</span><span class="p">)</span> <span class="p">{</span>  
+    <span class="na">-webkit-border-radius</span><span class="o">:</span> <span class="nv">$radius</span><span class="p">;</span>  
+    <span class="na">-moz-border-radius</span><span class="o">:</span> <span class="nv">$radius</span><span class="p">;</span>  
+    <span class="na">-ms-border-radius</span><span class="o">:</span> <span class="nv">$radius</span><span class="p">;</span>  
+    <span class="na">-o-border-radius</span><span class="o">:</span> <span class="nv">$radius</span><span class="p">;</span>  
+    <span class="na">border-radius</span><span class="o">:</span> <span class="nv">$radius</span><span class="p">;</span>  
+<span class="p">}</span>  
+<span class="nc">.box</span> <span class="p">{</span>  
+    <span class="k">@include</span><span class="nd"> border-radius</span><span class="p">(</span><span class="mi">10</span><span class="kt">px</span><span class="p">);</span>  
+<span class="p">}</span></code></pre></div>
+
+<h1 id="differences">Differences</h1>
+
+<p>LESS and SASS are very powerful languages and are very similar in feature sets. In fact, at this time as far as I can tell, neither has a major benefit over the other. LESS does provide client side compilation, but that feature is limited and not as useful. So what are the differences? Syntax.</p>
+
+<p>LESS is true to it’s name when it comes to its syntax. LESS looks almost identical to CSS, therefore the learning curve is very low. With few keywords and the logic language being the familiar JavaScript, it is excellent for quick integration without any history with CSS superset languages. Variables are defined with the “@” symbol, and mixins are just classes with arguments.</p>
+
+<p>SASS on the other hand has a very defined language structure. They have more than a few reserved words and have a specific way of utilizing functions and mixins. They also have their own logic framework, meaning they have their own language spec on how to do loops and conditional statements.</p>
+
+<h1 id="which-to-use">Which to Use?</h1>
+
+<p>In terms of features and power, it’s a definitive tie. You might go with LESS if you would like to test using the client-side loading feature of the LESS instead of compiling each time you modify the stylesheets.</p>
+
+<p>The only reason to choose one over the other is really a matter of preference. Each language has very different language syntax. LESS leans toward being more easy to catch on, even for designers. Unless you have a team already familiar with SASS, my recommendation would be to check out LESS.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=/less-vs-sass-scss-why-which/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=/less-vs-sass-scss-why-which/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=/less-vs-sass-scss-why-which/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>LESS vs SASS - Why to Use Them and Which to Use</strong> was published on <time datetime="2013-12-21T00:00:00-07:00">December 21, 2013</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <footer>
+    
+
+<span>&copy; 2015 Your Name.
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+  
+
+
+
+
+</body>
+</html>

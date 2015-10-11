@@ -1,0 +1,16 @@
+jQuery(function($) {
+
+	var screenWidth = window.innerWidth;
+
+	if (screenWidth <= 320)
+	{
+		$('.sf-front').each(function() {
+
+			var main_link = $(this).find('a');
+			var effect_link = $(this).siblings('.sf-mask').find('a');
+
+			main_link.attr('href', effect_link.attr('href'));
+
+		});
+	}
+})
