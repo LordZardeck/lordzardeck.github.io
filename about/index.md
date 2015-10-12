@@ -23,7 +23,7 @@ image:
 # Sean Templeton
 
 - Colorado Springs, CO, United States
-- 4174133473
+- (417) 413-3473
 - sean@templeton.io
 - http://templeton.io
 - Resume: [http://careers.stackoverflow.com/cv/employer/72536](http://careers.stackoverflow.com/cv/employer/72536)
