@@ -20,14 +20,15 @@ image:
 </div>
 </section><!-- /#table-of-contents -->
 
-I am a Web Developer and technology enthusiast who has been developing web applications since I was 15 years old. From server-side to client-side, I enjoy all things regarding the Web. I primarily enjoy building great User Experiences and architecting well-structured, easily maintainable code-bases. My expertise lies in JavaScript and CSS3 as well as UIX development.
+# Sean Templeton
 
-#Sean Templeton
 - Colorado Springs, CO, United States
 - 4174133473
 - sean@templeton.io
 - http://templeton.io
 - Resume: [http://careers.stackoverflow.com/cv/employer/72536](http://careers.stackoverflow.com/cv/employer/72536)
+
+I am a Web Developer and technology enthusiast who has been developing web applications since I was 15 years old. From server-side to client-side, I enjoy all things regarding the Web. I primarily enjoy building great User Experiences and architecting well-structured, easily maintainable code-bases. My expertise lies in JavaScript and CSS3 as well as UIX development.
 
 ---
 
