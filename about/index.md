@@ -145,7 +145,7 @@ php, javascript, mysql
 
 <div></div>
 
-Learn how to play the game of Redemption. Read stratigies used by other players and familarize yourself with common deck styles. Also, take the entire course and pass the final…
+Learn how to play the game of Redemption. Read stratigies used by other players and familarize yourself with common deck styles.
   
 Sole Developer
 
@@ -170,10 +170,6 @@ LESS vs SASS: Why we should use them, and which one should you use?
 <br/> 
 [http://www.experts-exchange.com/Programming/Languages/Scripting/PHP/A_2232-Object-Oriented-Programming-OOP-in-PHP-The-Class.html](http://www.experts-exchange.com/Programming/Languages/Scripting/PHP/A_2232-Object-Oriented-Programming-OOP-in-PHP-The-Class.html)
 
-<div></div>
-
-Object Oriented Programming is by far the best way to program. Now, procedural programming does have its place. For example, if you just needed a simple form submission, you wouldn&#39;t want to go...
-
 ---
 
 **Dojo Cake**
@@ -182,7 +178,7 @@ Object Oriented Programming is by far the best way to program. Now, procedural p
 
 <div></div>
 
-**_UPDATE_** All tutorials and reference material is now being offically moved to the project&#39;s wiki page. You can find the wiki via our google project page, or directly from here. After a lot of...
+**_UPDATE_** All tutorials and reference material is now being offically moved to the project&#39;s wiki page. You can find the wiki via our google project page, or directly from here.
 
 ---
 
