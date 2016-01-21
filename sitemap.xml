@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:4000/phantomjs-2-in-travisci/</loc>
+    <loc>https://templeton.io/phantomjs-2-in-travisci/</loc>
     <lastmod>2016-01-21T00:15:18-07:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:4000/less-vs-sass-scss-why-which/</loc>
+    <loc>https://templeton.io/less-vs-sass-scss-why-which/</loc>
     <lastmod>2013-12-21T00:00:00-07:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:4000/</loc>
-    <lastmod>2016-01-21T00:38:44-07:00</lastmod>
+    <loc>https://templeton.io/</loc>
+    <lastmod>2016-01-21T00:41:39-07:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:4000/theme-setup/</loc>
-    <lastmod>2016-01-21T00:38:44-07:00</lastmod>
+    <loc>https://templeton.io/theme-setup/</loc>
+    <lastmod>2016-01-21T00:41:39-07:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:4000/posts/</loc>
-    <lastmod>2016-01-21T00:38:44-07:00</lastmod>
+    <loc>https://templeton.io/posts/</loc>
+    <lastmod>2016-01-21T00:41:39-07:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:4000/about/</loc>
-    <lastmod>2016-01-21T00:38:44-07:00</lastmod>
+    <loc>https://templeton.io/about/</loc>
+    <lastmod>2016-01-21T00:41:39-07:00</lastmod>
   </url>
 </urlset>

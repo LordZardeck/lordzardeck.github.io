@@ -2,13 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Sean Templeton: Web Developer</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2016-01-21T00:38:44-07:00</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="https://templeton.io/feed.xml" />
+<link rel="alternate" type="text/html" href="https://templeton.io" />
+<updated>2016-01-21T00:41:39-07:00</updated>
+<id>https://templeton.io/</id>
 <author>
   <name>Sean Templeton</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>https://templeton.io/</uri>
   <email>sean@templeton.io</email>
 </author>
 
@@ -17,13 +17,13 @@
 
 <entry>
   <title type="html"><![CDATA[PhantomJS 2 in TravisCI]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/phantomjs-2-in-travisci/" />
-  <id>http://localhost:4000/phantomjs-2-in-travisci</id>
+  <link rel="alternate" type="text/html" href="https://templeton.io/phantomjs-2-in-travisci/" />
+  <id>https://templeton.io/phantomjs-2-in-travisci</id>
   <published>2016-01-21T00:15:18-07:00</published>
   <updated>2016-01-21T00:15:18-07:00</updated>
   <author>
     <name>Sean Templeton</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://templeton.io</uri>
     <email>sean@templeton.io</email>
   </author>
   <content type="html">
@@ -74,7 +74,7 @@
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;PHANTOMJS2_VERSION&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2.0.0&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/phantomjs-2-in-travisci/&quot;&gt;PhantomJS 2 in TravisCI&lt;/a&gt; was originally published by Sean Templeton at &lt;a href=&quot;http://localhost:4000&quot;&gt;Sean Templeton: Web Developer&lt;/a&gt; on January 21, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://templeton.io/phantomjs-2-in-travisci/&quot;&gt;PhantomJS 2 in TravisCI&lt;/a&gt; was originally published by Sean Templeton at &lt;a href=&quot;https://templeton.io&quot;&gt;Sean Templeton: Web Developer&lt;/a&gt; on January 21, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -83,13 +83,13 @@
 
 <entry>
   <title type="html"><![CDATA[LESS vs SASS - Why to Use Them and Which to Use]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/less-vs-sass-scss-why-which/" />
-  <id>http://localhost:4000/less-vs-sass-scss-why-which</id>
+  <link rel="alternate" type="text/html" href="https://templeton.io/less-vs-sass-scss-why-which/" />
+  <id>https://templeton.io/less-vs-sass-scss-why-which</id>
   <published>2013-12-21T00:00:00-07:00</published>
   <updated>2013-12-21T00:00:00-07:00</updated>
   <author>
     <name>Sean Templeton</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://templeton.io</uri>
     <email>sean@templeton.io</email>
   </author>
   <content type="html">
@@ -223,7 +223,7 @@
 
 &lt;p&gt;The only reason to choose one over the other is really a matter of preference. Each language has very different language syntax. LESS leans toward being more easy to catch on, even for designers. Unless you have a team already familiar with SASS, my recommendation would be to check out LESS.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/less-vs-sass-scss-why-which/&quot;&gt;LESS vs SASS - Why to Use Them and Which to Use&lt;/a&gt; was originally published by Sean Templeton at &lt;a href=&quot;http://localhost:4000&quot;&gt;Sean Templeton: Web Developer&lt;/a&gt; on December 21, 2013.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://templeton.io/less-vs-sass-scss-why-which/&quot;&gt;LESS vs SASS - Why to Use Them and Which to Use&lt;/a&gt; was originally published by Sean Templeton at &lt;a href=&quot;https://templeton.io&quot;&gt;Sean Templeton: Web Developer&lt;/a&gt; on December 21, 2013.&lt;/p&gt;
   </content>
 </entry>
 
