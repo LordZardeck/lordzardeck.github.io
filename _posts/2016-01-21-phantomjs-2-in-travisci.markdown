@@ -3,6 +3,7 @@ layout: post
 title: "PhantomJS 2 in TravisCI"
 modified:
 categories: 
+comments: true
 excerpt: PhantomJS 2 doesn't work out of the box with Travis, today I figured out how
 tags: [travis ci, phantomjs, phantomjs2]
 date: 2016-01-21T00:15:18-07:00
