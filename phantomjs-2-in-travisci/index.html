@@ -1,0 +1,248 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>PhantomJS 2 in TravisCI &#8211; Sean Templeton: Web Developer</title>
+<meta name="description" content="PhantomJS 2 doesn't work out of the box with Travis, today I figured out how">
+<meta name="keywords" content="travis ci, phantomjs, phantomjs2">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="PhantomJS 2 in TravisCI">
+<meta name="twitter:description" content="PhantomJS 2 doesn't work out of the box with Travis, today I figured out how">
+<meta name="twitter:site" content="@lordzardeck">
+<meta name="twitter:creator" content="@lordzardeck">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://localhost:4000/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PhantomJS 2 in TravisCI">
+<meta property="og:description" content="PhantomJS 2 doesn't work out of the box with Travis, today I figured out how">
+<meta property="og:url" content="http://localhost:4000/phantomjs-2-in-travisci/">
+<meta property="og:site_name" content="Sean Templeton: Web Developer">
+
+<meta property="og:image" content="http://localhost:4000/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/phantomjs-2-in-travisci/">
+<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Sean Templeton: Web Developer Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://localhost:4000/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://localhost:4000/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://localhost:4000/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://localhost:4000/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://localhost:4000/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://localhost:4000/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://localhost:4000/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://localhost:4000/">Sean Templeton: Web Developer</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="http://localhost:4000/about/" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="http://localhost:4000/posts/" >Blog</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="http://localhost:4000/images/bio-photo.jpg" class="bio-photo" alt="Sean Templeton bio photo">
+
+
+  <h3 itemprop="name">Sean Templeton</h3>
+  <p>I am a Web Developer and technology enthusiast who has been developing web applications since I was 15 years old.</p>
+  <a href="mailto:sean@templeton.io" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/lordzardeck" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  <a href="http://plus.google.com/+SeanTempletonJS" class="author-social" target="_blank"><i class="fa fa-fw fa-google-plus-square"></i> Google+</a>
+  <a href="http://linkedin.com/in/lordzardeck" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  <a href="http://github.com/lordzardeck" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  <a href="http://stackoverflow.com/users/633513/lordzardeck" class="author-social" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i> Stackoverflow</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="http://localhost:4000/phantomjs-2-in-travisci/" rel="bookmark" title="PhantomJS 2 in TravisCI">PhantomJS 2 in TravisCI</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>We recently added unit tests to our project, and ran them with Karma off of PhantomJS. After hours of frustration we discovered that the 1.x version of PhantomJS did not support some basic ES5 functionality, such as <code>Function.prototype.bind</code>. We also learned taht there was a 2.x unstable version of PhantomJS that did support this requirement, so we proceeded to update to <code>karma-phantomjs2-launcher</code>. This all worked fine on our local machines, and we went on our merry way, continuing to add tests.</p>
+
+<p>Once we were finished, we pushed to GitHub our changes, and awaited Travis to show us that beautiful green build notification. Instead we got red.</p>
+
+<p>Unfortuanetly PhantomJS isn’t supported out of the box on Travis. After scouring the dark corners of the web, we gave up trying to get PhantomJS 2 to run on Travis’ containers and reverted back to their legacy system, installing shared library depencies and the like, and finally got our builds working. Although they took <em>forever</em> to run.</p>
+
+<h2 id="light-at-the-end-of-the-tunnel">Light at the end of the tunnel</h2>
+
+<p>After being frustrated by the recent issues with Travis not building legacy builds, I took up arms again and fought to find a solution to running PhantomJS 2 on Travis containers. A Travis representitve offered a snippet of code to go our <code>.travis.yml</code> file, but no such luck.</p>
+
+<blockquote>
+  <p>Addition to .travis.yml file from Travis representitive:</p>
+</blockquote>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">install</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">mkdir travis-phantomjs</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">export PATH=$PWD/travis-phantomjs:$PATH</span></code></pre></div>
+
+<p>After continuing the discussion, they pointed out the fact that one of our node modules was re-installing PhantomJS, back to an unsupported build. That’s when things started rolling toward victory.</p>
+
+<h1 id="the-final-solution">The final solution</h1>
+
+<p>After exploring the packages installed by <code>karma-phantomjs2-launcher</code>, I came across the <code>phantomjs-ext</code> package and their npm page: https://www.npmjs.com/package/phantomjs2-ext. Reading through the docs, I noticed we could specify a custom version through an environment variable. Sure enough, specifying version <code>2.0.0</code> for <code>PHANTOMJS2_VERSION</code> in travis’s environment variables unlocked the blazing speed of contianers. Our quest was over.</p>
+
+<h1 id="tldr">TL;DR</h1>
+
+<p>So if you are looking to add PhantomJS 2 to your Travis builds, there are 2 things you need to do:</p>
+
+<ol>
+  <li>Install the supported build of PhantomJS 2 from travis’s s3 bucket and add it to the path</li>
+  <li>Add an environment variable to Travis specifying the PhantomJS version you installed</li>
+</ol>
+
+<h2 id="travisyml-file">.travis.yml file</h2>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">install</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">mkdir travis-phantomjs</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">export PATH=$PWD/travis-phantomjs:$PATH</span></code></pre></div>
+
+<h2 id="travis-environment-variable">Travis environment variable</h2>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">PHANTOMJS2_VERSION</span><span class="o">=</span><span class="s2">&quot;2.0.0&quot;</span></code></pre></div>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/phantomjs-2-in-travisci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/phantomjs-2-in-travisci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/phantomjs-2-in-travisci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>PhantomJS 2 in TravisCI</strong> was published on <time datetime="2016-01-21T00:15:18-07:00">January 21, 2016</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://localhost:4000/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="http://localhost:4000/less-vs-sass-scss-why-which/" title="LESS vs SASS - Why to Use Them and Which to Use">LESS vs SASS - Why to Use Them and Which to Use</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2016 Sean Templeton.
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://localhost:4000/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://localhost:4000/assets/js/scripts.min.js"></script>
+
+
+
+
+</body>
+</html>
