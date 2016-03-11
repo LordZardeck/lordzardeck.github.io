@@ -4,13 +4,61 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://templeton.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://templeton.io" />
-<updated>2016-01-21T00:49:58-07:00</updated>
+<updated>2016-03-10T16:51:39-07:00</updated>
 <id>https://templeton.io/</id>
 <author>
   <name>Sean Templeton</name>
   <uri>https://templeton.io/</uri>
   <email>sean@templeton.io</email>
 </author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[How to Setup Local Development of Facebook's Real-Time API]]></title>
+  <link rel="alternate" type="text/html" href="https://templeton.io/local-facebook-real-time-api/" />
+  <id>https://templeton.io/local-facebook-real-time-api</id>
+  <published>2016-03-10T00:00:00-07:00</published>
+  <updated>2016-03-10T00:00:00-07:00</updated>
+  <author>
+    <name>Sean Templeton</name>
+    <uri>https://templeton.io</uri>
+    <email>sean@templeton.io</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Developing against facebook’s real-time webhooks requires a static url utilizing SSL. This may seem impossible to do locally, but in a matter of 15 minutes, you can be ready to recieve updates from facebook on your local machine.&lt;/p&gt;
+
+&lt;h2 id=&quot;requirements&quot;&gt;Requirements&lt;/h2&gt;
+
+&lt;p&gt;In order for Facebook’s real-time webhooks to talk to your application, it requires 2 things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Static URL to talk to&lt;/li&gt;
+  &lt;li&gt;HTTPS URL&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Both of these present a huge problem for local development, as you most likely have a dynamic IP for your local network, and SSL’s aren’t cheap, nor are they easy to setup.&lt;/p&gt;
+
+&lt;h2 id=&quot;static-urls&quot;&gt;Static URLs&lt;/h2&gt;
+
+&lt;p&gt;Many people have a use case for needing a static IP for their local network. Whether it be for hosting a gaming server, or a web server, being able to have people connect to your machine from outside your local network can be a necessity.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.noip.com/&quot;&gt;No-IP&lt;/a&gt; is a service that can help mitigate this issue. It’s an application that you install on your machine, and whenever your ip changes, it updates your hostname so that other people can still access your local servers. By using No-IP, you can give facebook a static URL, and it will always know where to direct traffic.&lt;/p&gt;
+
+&lt;h2 id=&quot;ssls&quot;&gt;SSLs&lt;/h2&gt;
+
+&lt;p&gt;SSLs aren’t cheap, and in addition, they are expensive. Most of the time, you can get away with developing without SSL, just for testing and exploration. Facebook, however, wont’ allow you to connect to their Real-Time webhooks without connecting to your service over SSL.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cloudflare.com/&quot;&gt;Cloudflare&lt;/a&gt; is a company that provides a varitey of services related to DNS (domain name services). They also provide “free” share ssl. If you signup with their free plan, you can associate the domain you have from no-ip with a SSL protected domain from cloudflare.&lt;/p&gt;
+
+&lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;Get a static domain with &lt;a href=&quot;http://www.noip.com/&quot;&gt;No-IP&lt;/a&gt; and get it SSL protected with &lt;a href=&quot;https://www.cloudflare.com/&quot;&gt;Cloudflare&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://templeton.io/local-facebook-real-time-api/&quot;&gt;How to Setup Local Development of Facebook&#39;s Real-Time API&lt;/a&gt; was originally published by Sean Templeton at &lt;a href=&quot;https://templeton.io&quot;&gt;Sean Templeton: Web Developer&lt;/a&gt; on March 10, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
   

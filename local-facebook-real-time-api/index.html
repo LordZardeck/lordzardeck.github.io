@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>PhantomJS 2 in TravisCI &#8211; Sean Templeton: Web Developer</title>
-<meta name="description" content="PhantomJS 2 doesn't work out of the box with Travis, today I figured out how">
-<meta name="keywords" content="travis ci, phantomjs, phantomjs2">
+<title>How to Setup Local Development of Facebook's Real-Time API &#8211; Sean Templeton: Web Developer</title>
+<meta name="description" content="Developing against facebook's real-time webhooks requires a static url utilizing SSL. This may seem impossible to do locally, but in a matter of 15 minutes, you can be ready to recieve updates from facebook on your local machine.">
+<meta name="keywords" content="facebook, ssl, webhook, real time">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="PhantomJS 2 in TravisCI">
-<meta name="twitter:description" content="PhantomJS 2 doesn't work out of the box with Travis, today I figured out how">
+<meta name="twitter:title" content="How to Setup Local Development of Facebook's Real-Time API">
+<meta name="twitter:description" content="Developing against facebook's real-time webhooks requires a static url utilizing SSL. This may seem impossible to do locally, but in a matter of 15 minutes, you can be ready to recieve updates from facebook on your local machine.">
 <meta name="twitter:site" content="@lordzardeck">
 <meta name="twitter:creator" content="@lordzardeck">
 
@@ -23,9 +23,9 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PhantomJS 2 in TravisCI">
-<meta property="og:description" content="PhantomJS 2 doesn't work out of the box with Travis, today I figured out how">
-<meta property="og:url" content="https://templeton.io/phantomjs-2-in-travisci/">
+<meta property="og:title" content="How to Setup Local Development of Facebook's Real-Time API">
+<meta property="og:description" content="Developing against facebook's real-time webhooks requires a static url utilizing SSL. This may seem impossible to do locally, but in a matter of 15 minutes, you can be ready to recieve updates from facebook on your local machine.">
+<meta property="og:url" content="https://templeton.io/local-facebook-real-time-api/">
 <meta property="og:site_name" content="Sean Templeton: Web Developer">
 
 <meta property="og:image" content="https://templeton.io/images/default-thumb.png">
@@ -35,7 +35,7 @@
 
 
 
-<link rel="canonical" href="https://templeton.io/phantomjs-2-in-travisci/">
+<link rel="canonical" href="https://templeton.io/local-facebook-real-time-api/">
 <link href="https://templeton.io/feed.xml" type="application/atom+xml" rel="alternate" title="Sean Templeton: Web Developer Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -143,56 +143,38 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="https://templeton.io/phantomjs-2-in-travisci/" rel="bookmark" title="PhantomJS 2 in TravisCI">PhantomJS 2 in TravisCI</a></h1>
+        <h1><a href="https://templeton.io/local-facebook-real-time-api/" rel="bookmark" title="How to Setup Local Development of Facebook's Real-Time API">How to Setup Local Development of Facebook's Real-Time API</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>We recently added unit tests to our project, and ran them with Karma off of PhantomJS. After hours of frustration we discovered that the 1.x version of PhantomJS did not support some basic ES5 functionality, such as <code>Function.prototype.bind</code>. We also learned taht there was a 2.x unstable version of PhantomJS that did support this requirement, so we proceeded to update to <code>karma-phantomjs2-launcher</code>. This all worked fine on our local machines, and we went on our merry way, continuing to add tests.</p>
+      <p>Developing against facebook’s real-time webhooks requires a static url utilizing SSL. This may seem impossible to do locally, but in a matter of 15 minutes, you can be ready to recieve updates from facebook on your local machine.</p>
 
-<p>Once we were finished, we pushed to GitHub our changes, and awaited Travis to show us that beautiful green build notification. Instead we got red.</p>
+<h2 id="requirements">Requirements</h2>
 
-<p>Unfortuanetly PhantomJS isn’t supported out of the box on Travis. After scouring the dark corners of the web, we gave up trying to get PhantomJS 2 to run on Travis’ containers and reverted back to their legacy system, installing shared library depencies and the like, and finally got our builds working. Although they took <em>forever</em> to run.</p>
+<p>In order for Facebook’s real-time webhooks to talk to your application, it requires 2 things:</p>
 
-<h2 id="light-at-the-end-of-the-tunnel">Light at the end of the tunnel</h2>
+<ul>
+  <li>Static URL to talk to</li>
+  <li>HTTPS URL</li>
+</ul>
 
-<p>After being frustrated by the recent issues with Travis not building legacy builds, I took up arms again and fought to find a solution to running PhantomJS 2 on Travis containers. A Travis representitve offered a snippet of code to go our <code>.travis.yml</code> file, but no such luck.</p>
+<p>Both of these present a huge problem for local development, as you most likely have a dynamic IP for your local network, and SSL’s aren’t cheap, nor are they easy to setup.</p>
 
-<blockquote>
-  <p>Addition to .travis.yml file from Travis representitive:</p>
-</blockquote>
+<h2 id="static-urls">Static URLs</h2>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">install</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">mkdir travis-phantomjs</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">export PATH=$PWD/travis-phantomjs:$PATH</span></code></pre></div>
+<p>Many people have a use case for needing a static IP for their local network. Whether it be for hosting a gaming server, or a web server, being able to have people connect to your machine from outside your local network can be a necessity.</p>
 
-<p>After continuing the discussion, they pointed out the fact that one of our node modules was re-installing PhantomJS, back to an unsupported build. That’s when things started rolling toward victory.</p>
+<p><a href="http://www.noip.com/">No-IP</a> is a service that can help mitigate this issue. It’s an application that you install on your machine, and whenever your ip changes, it updates your hostname so that other people can still access your local servers. By using No-IP, you can give facebook a static URL, and it will always know where to direct traffic.</p>
 
-<h1 id="the-final-solution">The final solution</h1>
+<h2 id="ssls">SSLs</h2>
 
-<p>After exploring the packages installed by <code>karma-phantomjs2-launcher</code>, I came across the <code>phantomjs-ext</code> package and their npm page: https://www.npmjs.com/package/phantomjs2-ext. Reading through the docs, I noticed we could specify a custom version through an environment variable. Sure enough, specifying version <code>2.0.0</code> for <code>PHANTOMJS2_VERSION</code> in travis’s environment variables unlocked the blazing speed of contianers. Our quest was over.</p>
+<p>SSLs aren’t cheap, and in addition, they are expensive. Most of the time, you can get away with developing without SSL, just for testing and exploration. Facebook, however, wont’ allow you to connect to their Real-Time webhooks without connecting to your service over SSL.</p>
 
-<h1 id="tldr">TL;DR</h1>
+<p><a href="https://www.cloudflare.com/">Cloudflare</a> is a company that provides a varitey of services related to DNS (domain name services). They also provide “free” share ssl. If you signup with their free plan, you can associate the domain you have from no-ip with a SSL protected domain from cloudflare.</p>
 
-<p>So if you are looking to add PhantomJS 2 to your Travis builds, there are 2 things you need to do:</p>
+<h2 id="tldr">TL;DR</h2>
 
-<ol>
-  <li>Install the supported build of PhantomJS 2 from travis’s s3 bucket and add it to the path</li>
-  <li>Add an environment variable to Travis specifying the PhantomJS version you installed</li>
-</ol>
-
-<h2 id="travisyml-file">.travis.yml file</h2>
-
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">install</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">mkdir travis-phantomjs</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">export PATH=$PWD/travis-phantomjs:$PATH</span></code></pre></div>
-
-<h2 id="travis-environment-variable">Travis environment variable</h2>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">PHANTOMJS2_VERSION</span><span class="o">=</span><span class="s2">&quot;2.0.0&quot;</span></code></pre></div>
+<p>Get a static domain with <a href="http://www.noip.com/">No-IP</a> and get it SSL protected with <a href="https://www.cloudflare.com/">Cloudflare</a></p>
 
       <hr />
       <footer role="contentinfo">
@@ -200,17 +182,17 @@
   <h4>Share on</h4>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text=https://templeton.io/phantomjs-2-in-travisci/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text=https://templeton.io/local-facebook-real-time-api/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://templeton.io/phantomjs-2-in-travisci/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://templeton.io/local-facebook-real-time-api/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url=https://templeton.io/phantomjs-2-in-travisci/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url=https://templeton.io/local-facebook-real-time-api/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>PhantomJS 2 in TravisCI</strong> was published on <time datetime="2016-01-21T00:15:18-07:00">January 21, 2016</time>.</p>
+        <p class="byline"><strong>How to Setup Local Development of Facebook's Real-Time API</strong> was published on <time datetime="2016-03-10T00:00:00-07:00">March 10, 2016</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -225,7 +207,7 @@
   <h4>You might also enjoy <small class="pull-right">(<a href="https://templeton.io/posts/">View all posts</a>)</small></h4>
     <ul>
     
-      <li><a href="https://templeton.io/local-facebook-real-time-api/" title="How to Setup Local Development of Facebook's Real-Time API">How to Setup Local Development of Facebook's Real-Time API</a></li>
+      <li><a href="https://templeton.io/phantomjs-2-in-travisci/" title="PhantomJS 2 in TravisCI">PhantomJS 2 in TravisCI</a></li>
     
       <li><a href="https://templeton.io/less-vs-sass-scss-why-which/" title="LESS vs SASS - Why to Use Them and Which to Use">LESS vs SASS - Why to Use Them and Which to Use</a></li>
     
