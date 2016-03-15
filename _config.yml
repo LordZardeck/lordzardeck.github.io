@@ -6,7 +6,6 @@ url:              "https://templeton.io"
 
 
 # Jekyll configuration
-
 permalink:   /:categories/:title/
 markdown:    kramdown
 highlighter: pygments
@@ -15,7 +14,6 @@ sass:
   style: compressed
 gems:
   - jekyll-sitemap
-
 kramdown:
   auto_ids: true
   footnote_nr: 1
@@ -23,6 +21,10 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
+jekyll-press:
+  js_options: {}      # js minifier options
+  css_options: {}     # css minifier options
+  html_options: {}    # html minifier options
 
 # Site owner
 owner:
