@@ -22,11 +22,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="{{ site.url }}/assets/css/main.css">
+
+<style type="text/css">
+  {% capture include_to_scssify %}
+  {% include main.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify }}
+</style>
 
 <meta http-equiv="cleartype" content="on">
-
-<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
 
 <!-- Icons -->
 <!-- 16x16 -->
