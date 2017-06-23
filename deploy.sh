@@ -2,7 +2,7 @@
 set -e # Exit with nonzero exit code if anything fails
 
 SOURCE_BRANCH="source"
-TARGET_BRANCH="gh-pages"
+TARGET_BRANCH="master"
 
 function doCompile {
   bundle exec jekyll build --destination out
