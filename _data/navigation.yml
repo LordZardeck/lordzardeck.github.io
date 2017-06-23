@@ -1,7 +1,6 @@
-# Site navigation links
-
-- title: About
-  url: /about/
-
-- title: Blog
-  url: /posts/
+# main links
+main:
+  - title: About
+    url: /about/
+  - title: Blog
+    url: /posts/

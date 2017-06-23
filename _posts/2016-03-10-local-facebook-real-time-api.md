@@ -1,8 +1,13 @@
 ---
-layout: post
 title: "How to Setup Local Development of Facebook's Real-Time API"
 excerpt: "Developing against facebook's real-time webhooks requires a static url utilizing SSL. This may seem impossible to do locally, but in a matter of 15 minutes, you can be ready to recieve updates from facebook on your local machine."
-tags: [facebook, ssl, webhook, real time]
+tags: 
+  - facebook
+  - ssl
+  - webhook
+  - real time
+categories:
+  - Development
 comments: true
 ---
 

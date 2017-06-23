@@ -1,24 +1,18 @@
 ---
-layout: post
 title: "LESS vs SASS - Why to Use Them and Which to Use"
 excerpt: "LESS vs SASS: Why we should use them, and which one should you use?"
-tags: [LESS vs SASS]
+tags: 
+  - LESS
+  - SASS
+categories:
+  - Development
 comments: true
-image:
-  feature: sass-less.png
-  credit: Bootstrap
-  creditlink: http://getbootstrap.com/
+header:
+  image: /images/sass-less.png
+  caption: "Photo Credit: [Bootstrap](http://getbootstrap.com/)"
 ---
 
-<section id="table-of-contents" class="toc">
-  <header>
-    <h3>Overview</h3>
-  </header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section><!-- /#table-of-contents -->
+{% include toc title="Overview" icon="file-text" %}
 
 ## LESS and SASS Overview
 
