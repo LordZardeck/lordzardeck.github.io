@@ -57,7 +57,7 @@ ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
 openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in ../person-site-deploy.enc -out ../person-site-deploy -d
 chmod 600 ../person-site-deploy
 eval `ssh-agent -s`
-ssh-add person-site-deploy
+ssh-add ../person-site-deploy
 
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
