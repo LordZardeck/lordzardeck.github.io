@@ -1,1 +1,97 @@
-function UnityProgress(s){this.progress=0,this.message="",this.dom=s;var e=s.parentNode,t=document.createElement("div");t.style.background="#4D4D4D",t.style.position="absolute",e.appendChild(t),this.background=t;var i=document.createElement("img");i.src="TemplateData/progresslogo.png",i.style.position="absolute",e.appendChild(i),this.logoImage=i;var o=document.createElement("img");o.src="TemplateData/loadingbar.png",o.style.position="absolute",e.appendChild(o),this.progressFrame=o;var r=document.createElement("img");r.src="TemplateData/fullbar.png",r.style.position="absolute",e.appendChild(r),this.progressBar=r;var h=document.createElement("p");h.style.position="absolute",e.appendChild(h),this.messageArea=h,this.SetProgress=function(s){this.progress<s&&(this.progress=s),this.messageArea.style.display="none",this.progressFrame.style.display="inline",this.progressBar.style.display="inline",this.Update()},this.SetMessage=function(s){this.message=s,this.background.style.display="inline",this.logoImage.style.display="inline",this.progressFrame.style.display="none",this.progressBar.style.display="none",this.Update()},this.Clear=function(){this.background.style.display="none",this.logoImage.style.display="none",this.progressFrame.style.display="none",this.progressBar.style.display="none"},this.Update=function(){this.background.style.top=this.dom.offsetTop+"px",this.background.style.left=this.dom.offsetLeft+"px",this.background.style.width=this.dom.offsetWidth+"px",this.background.style.height=this.dom.offsetHeight+"px";var s=new Image;s.src=this.logoImage.src;var e=new Image;e.src=this.progressFrame.src,this.logoImage.style.top=this.dom.offsetTop+(.5*this.dom.offsetHeight-.5*s.height)+"px",this.logoImage.style.left=this.dom.offsetLeft+(.5*this.dom.offsetWidth-.5*s.width)+"px",this.logoImage.style.width=s.width+"px",this.logoImage.style.height=s.height+"px",this.progressFrame.style.top=this.dom.offsetTop+(.5*this.dom.offsetHeight+.5*s.height+10)+"px",this.progressFrame.style.left=this.dom.offsetLeft+(.5*this.dom.offsetWidth-.5*e.width)+"px",this.progressFrame.width=e.width,this.progressFrame.height=e.height,this.progressBar.style.top=this.progressFrame.style.top,this.progressBar.style.left=this.progressFrame.style.left,this.progressBar.width=e.width*Math.min(this.progress,1),this.progressBar.height=e.height,this.messageArea.style.top=this.progressFrame.style.top,this.messageArea.style.left=0,this.messageArea.style.width="100%",this.messageArea.style.textAlign="center",this.messageArea.innerHTML=this.message},this.Update()}
+function UnityProgress (dom) {
+	this.progress = 0.0;
+	this.message = "";
+	this.dom = dom;
+
+	var parent = dom.parentNode;
+
+	var background = document.createElement("div");
+	background.style.background = "#4D4D4D";
+	background.style.position = "absolute";
+	parent.appendChild(background);
+	this.background = background;
+
+	var logoImage = document.createElement("img");
+	logoImage.src = "TemplateData/progresslogo.png"; 
+	logoImage.style.position = "absolute";
+	parent.appendChild(logoImage);
+	this.logoImage = logoImage;
+
+	var progressFrame = document.createElement("img");
+	progressFrame.src = "TemplateData/loadingbar.png"; 
+	progressFrame.style.position = "absolute";
+	parent.appendChild(progressFrame);
+	this.progressFrame = progressFrame;
+
+	var progressBar = document.createElement("img");
+	progressBar.src = "TemplateData/fullbar.png"; 
+	progressBar.style.position = "absolute";
+	parent.appendChild(progressBar);
+	this.progressBar = progressBar;
+
+	var messageArea = document.createElement("p");
+	messageArea.style.position = "absolute";
+	parent.appendChild(messageArea);
+	this.messageArea = messageArea;
+
+
+	this.SetProgress = function (progress) { 
+		if (this.progress < progress)
+			this.progress = progress; 
+		this.messageArea.style.display = "none";
+		this.progressFrame.style.display = "inline";
+		this.progressBar.style.display = "inline";			
+		this.Update();
+	}
+
+	this.SetMessage = function (message) { 
+		this.message = message; 
+		this.background.style.display = "inline";
+		this.logoImage.style.display = "inline";
+		this.progressFrame.style.display = "none";
+		this.progressBar.style.display = "none";			
+		this.Update();
+	}
+
+	this.Clear = function() {
+		this.background.style.display = "none";
+		this.logoImage.style.display = "none";
+		this.progressFrame.style.display = "none";
+		this.progressBar.style.display = "none";
+	}
+
+	this.Update = function() {
+		this.background.style.top = this.dom.offsetTop + 'px';
+		this.background.style.left = this.dom.offsetLeft + 'px';
+		this.background.style.width = this.dom.offsetWidth + 'px';
+		this.background.style.height = this.dom.offsetHeight + 'px';
+
+		var logoImg = new Image();
+		logoImg.src = this.logoImage.src;
+		var progressFrameImg = new Image();
+		progressFrameImg.src = this.progressFrame.src;
+
+		this.logoImage.style.top = this.dom.offsetTop + (this.dom.offsetHeight * 0.5 - logoImg.height * 0.5) + 'px';
+		this.logoImage.style.left = this.dom.offsetLeft + (this.dom.offsetWidth * 0.5 - logoImg.width * 0.5) + 'px';
+		this.logoImage.style.width = logoImg.width+'px';
+		this.logoImage.style.height = logoImg.height+'px';
+
+		this.progressFrame.style.top = this.dom.offsetTop + (this.dom.offsetHeight * 0.5 + logoImg.height * 0.5 + 10) + 'px';
+		this.progressFrame.style.left = this.dom.offsetLeft + (this.dom.offsetWidth * 0.5 - progressFrameImg.width * 0.5) + 'px';
+		this.progressFrame.width = progressFrameImg.width;
+		this.progressFrame.height = progressFrameImg.height;
+
+		this.progressBar.style.top = this.progressFrame.style.top;
+		this.progressBar.style.left = this.progressFrame.style.left;
+		this.progressBar.width = progressFrameImg.width * Math.min(this.progress, 1);
+		this.progressBar.height = progressFrameImg.height;
+
+		this.messageArea.style.top = this.progressFrame.style.top;
+		this.messageArea.style.left = 0;
+		this.messageArea.style.width = '100%';
+		this.messageArea.style.textAlign = 'center';
+		this.messageArea.innerHTML = this.message;
+	}
+
+	this.Update ();
+}

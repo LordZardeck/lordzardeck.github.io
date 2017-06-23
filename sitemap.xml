@@ -1,39 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://templeton.io/local-facebook-real-time-api/</loc>
-    <lastmod>2016-03-10T00:00:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>https://templeton.io/phantomjs-2-in-travisci/</loc>
-    <lastmod>2016-01-21T00:15:18-07:00</lastmod>
-  </url>
-  <url>
-    <loc>https://templeton.io/less-vs-sass-scss-why-which/</loc>
-    <lastmod>2013-12-21T00:00:00-07:00</lastmod>
-  </url>
-  <url>
-    <loc>https://templeton.io/consulting/</loc>
-    <lastmod>2016-04-20T16:42:52-06:00</lastmod>
-  </url>
-  <url>
-    <loc>https://templeton.io/about/</loc>
-    <lastmod>2016-04-20T16:42:52-06:00</lastmod>
-  </url>
-  <url>
-    <loc>https://templeton.io/</loc>
-    <lastmod>2016-04-20T16:42:52-06:00</lastmod>
-  </url>
-  <url>
-    <loc>https://templeton.io/posts/</loc>
-    <lastmod>2016-04-20T16:42:52-06:00</lastmod>
-  </url>
-  <url>
-    <loc>https://templeton.io/theme-setup/</loc>
-    <lastmod>2016-04-20T16:42:52-06:00</lastmod>
-  </url>
-  <url>
-    <loc>https://templeton.io/unity/amazing-racer/index.html</loc>
-    <lastmod>2016-03-30T23:07:46-06:00</lastmod>
-  </url>
+<url>
+<loc>https://templeton.io/less-vs-sass-scss-why-which/</loc>
+<lastmod>2013-12-21T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://templeton.io/phantomjs-2-in-travisci/</loc>
+<lastmod>2016-01-21T07:15:18+00:00</lastmod>
+</url>
+<url>
+<loc>https://templeton.io/local-facebook-real-time-api/</loc>
+<lastmod>2016-03-10T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>https://templeton.io/about/</loc>
+</url>
+<url>
+<loc>https://templeton.io/consulting</loc>
+</url>
+<url>
+<loc>https://templeton.io/</loc>
+</url>
+<url>
+<loc>https://templeton.io/posts/</loc>
+</url>
+<url>
+<loc>https://templeton.io/tags/</loc>
+</url>
+<url>
+<loc>https://templeton.io/unity/amazing-racer/index.html</loc>
+<lastmod>2017-06-23T17:16:44+00:00</lastmod>
+</url>
 </urlset>
