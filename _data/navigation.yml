@@ -2,5 +2,7 @@
 main:
   - title: About
     url: /about/
+  - title: Llama
+    url: /classy-llama/
   - title: Blog
     url: /posts/

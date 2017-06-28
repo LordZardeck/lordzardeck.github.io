@@ -166,7 +166,9 @@ kramdown:
 
 # Sass/SCSS
 sass:
-  sass_dir: _sass
+  load_paths:
+    - _sass
+    - assets/css
   style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
 
@@ -230,6 +232,10 @@ compress_html:
   ignore:
     envs: development
 
+collections:
+  classy-llama:
+    output: true
+    permalink: /:collection/:path
 
 # Defaults
 defaults:
@@ -244,3 +250,13 @@ defaults:
       comments: # true
       share: true
       related: true
+  - scope:
+      path: ""
+      type: classy-llama
+    values:
+      layout: classy_llama_single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+      comments: false

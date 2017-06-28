@@ -1,0 +1,36 @@
+---
+---
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.4.1 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js classy-llama-page">
+<head>
+  {% include head.html %}
+  {% include head/custom.html %}
+  <link rel='stylesheet' id='Source+Sans+Pro-css'  href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A1%2C300%2C400%2C400italic%2C700&#038;ver=4.7.5' type='text/css' media='all' />
+  <link rel='stylesheet' id='Open+Sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A1%2C300%2C400%2C400italic%2C700&#038;ver=4.7.5' type='text/css' media='all' />
+</head>
+
+<body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+
+{% include browser-upgrade.html %}
+{% include masthead.html %}
+
+{{ content }}
+
+<div class="page__footer">
+  <footer>
+    {% include footer/custom.html %}
+    {% include footer.html %}
+  </footer>
+</div>
+
+{% include scripts.html %}
+
+</body>
+</html>
