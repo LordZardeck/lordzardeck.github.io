@@ -1,0 +1,45 @@
+.classy-llama-page {
+  background-color: #111111;
+  background-image: url(/images/bg_canvas.png);
+  background-repeat: repeat;
+  background-position: center top;
+
+  body {
+    color: #dedede;
+  }
+
+  .archive__subtitle, .page__meta, .social-icons .fa {
+    color: #5BB4BC;
+  }
+
+  .masthead, .archive__subtitle {
+    border-color: #9ba1a6;
+  }
+
+  .greedy-nav a {
+    color: #dedede;
+    font-weight: 100;
+
+    &:hover {
+      color: #5BB4BC;
+    }
+  }
+
+  .page__footer, .greedy-nav {
+    background: none;
+    border: none;
+  }
+
+  h1, h2, h3, h4, h5, h6, .site-title {
+    font-weight: 100;
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+
+  .archive__item-excerpt, .author__bio {
+    font-family: "Source Sans Pro", Arial, Tahoma, sans-serif;
+  }
+
+  .author__bio {
+    font-size: 0.70em;
+  }
+}
