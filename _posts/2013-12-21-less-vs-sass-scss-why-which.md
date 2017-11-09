@@ -1,15 +1,21 @@
 ---
-title: "LESS vs SASS - Why to Use Them and Which to Use"
-excerpt: "LESS vs SASS: Why we should use them, and which one should you use?"
-tags: 
-  - LESS
-  - SASS
+title: LESS vs SASS - Why to Use Them and Which to Use
+excerpt: 'LESS vs SASS: Why we should use them, and which one should you use?'
+tags:
+- LESS
+- SASS
 categories:
-  - Development
+- Development
 comments: true
 header:
-  image: /images/sass-less.png
-  caption: "Photo Credit: [Bootstrap](http://getbootstrap.com/)"
+  image: "/images/sass-less.png"
+  caption: 'Photo Credit: [Bootstrap](http://getbootstrap.com/)'
+date: 2013-12-21 00:00:00 +0000
+author_profile: true
+read_time: true
+share: true
+related: true
+layout: single
 ---
 
 {% include toc title="Overview" icon="file-text" %}
